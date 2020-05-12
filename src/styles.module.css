@@ -1,29 +1,2 @@
 /* add css module styles here (optional) */
 
-.videoContainer {
-  display: inline-block;
-  position: relative;
-  margin: 20px;
-}
-
-.top, .right, .bottom, .left {
-  position: absolute;
-  height: 0;
-  background-color: red;
-  z-index: 2;
-}
-
-.top {
-  top: 0;
-}
-.right {
-  right: 0;
-}
-.bottom {
-  bottom: 0;
-  right: 0;
-}
-.left {
-  left: 0;
-  bottom: 0;
-}
