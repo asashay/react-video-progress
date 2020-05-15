@@ -1,6 +1,6 @@
 {
   "name": "react-video-progress",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "HOC for the &lt;video&gt; elements to show video progress at frame border",
   "author": "asashay",
   "license": "MIT",

@@ -15,7 +15,7 @@ const App = () => {
       pathWidth="7px"
       controls
       src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
-      height="300px"
+      height="200px"
     />
   </div>
 }

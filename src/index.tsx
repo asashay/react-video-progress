@@ -59,11 +59,14 @@ function getLengthes({
     default:
       break
   }
+
+  console.log('path', path, left, top, right, bottom)
+
   return {
-    top,
-    right,
-    bottom,
-    left
+    top: top > 0 ? top : 0,
+    right: right > 0 ? right : 0,
+    bottom: bottom > 0 ? bottom : 0,
+    left: left > 0 ? left : 0
   }
 }
 
