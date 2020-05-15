@@ -26,6 +26,8 @@ class Example extends Component {
   render() {
     return <VideoProgress
       src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
+      height="300px"
+      className="new-class"
       controls
       />
   }
@@ -38,6 +40,7 @@ class Example extends Component {
 | pathColor | string | `red` | No |
 | pathWidth | string | `5px` | No |
 | progressStart | one of [`BottomLeft`, `TopLeft`, `TopRight`, `BottomRight`] | `TopLeft` | No |
+| ...rest | any of `React.HTMLProps<HTMLVideoElement>` (e.g. `height, className` etc) |  | No |
 
 
 TO-DO:
