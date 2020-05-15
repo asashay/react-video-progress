@@ -5,7 +5,7 @@
 [![NPM](https://img.shields.io/npm/v/react-video-progress.svg)](https://www.npmjs.com/package/react-video-progress) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Demo
-Check out the ![demo](demo/demo.gif)
+![Video Progressbar Demo](demo/demo.gif)
 
 ## Install
 
