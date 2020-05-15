@@ -4,6 +4,9 @@
 
 [![NPM](https://img.shields.io/npm/v/react-video-progress.svg)](https://www.npmjs.com/package/react-video-progress) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+## Demo
+Check out the [demo](demo/demo.gif)
+
 ## Install
 
 ```bash
@@ -34,7 +37,7 @@ class Example extends Component {
 |---|---|---|---|
 | pathColor | string | `red` | No |
 | pathWidth | string | `5px` | No |
-| progressStart | one of ['BottomLeft', 'TopLeft', 'TopRight', 'BottomRight'] | `TopLeft` | No |
+| progressStart | one of [`BottomLeft`, `TopLeft`, `TopRight`, `BottomRight`] | `TopLeft` | No |
 
 
 TO-DO:
