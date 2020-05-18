@@ -189,7 +189,7 @@ export const VideoProgress = React.forwardRef<
     ref
   ) => {
     const containerRef = React.useRef<HTMLDivElement>(null)
-    // const videoRef = React.useRef<HTMLVideoElement>(null)
+    const videoRef = React.useRef<HTMLVideoElement>(null)
     const [duration, setDuration] = React.useState(0)
     const [currentTime, setCurrentTime] = React.useState(0)
 
@@ -228,8 +228,7 @@ export const VideoProgress = React.forwardRef<
       <div
         style={{
           display: 'inline-block',
-          position: 'relative',
-          margin: '20px'
+          position: 'relative'
         }}
         ref={containerRef}
       >
@@ -266,7 +265,7 @@ export const VideoProgress = React.forwardRef<
           }}
         />
         <video
-          ref={ref}
+          ref={ref ?? videoRef}
           onLoadedMetadata={(e: React.SyntheticEvent<HTMLVideoElement>) => {
             setDuration(e.currentTarget.duration)
             onLoadedMetadata(e)
