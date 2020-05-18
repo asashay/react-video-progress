@@ -25,9 +25,12 @@ import VideoProgress from 'react-video-progress'
 class Example extends Component {
   render() {
     return <VideoProgress
+      progressStart="BottomLeft"
+      type="TwoLines"
+      pathColor="red"
+      pathWidth="7px"
       src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
-      height="300px"
-      className="new-class"
+      height="200px"
       controls
       />
   }
@@ -41,6 +44,8 @@ class Example extends Component {
 | pathWidth | string | `5px` | No |
 | progressStart | one of [`BottomLeft`, `TopLeft`, `TopRight`, `BottomRight`] | `TopLeft` | No |
 | type | one of [`OneLine`, `TwoLines`] | `OneLine` | No |
+| wrapperStyle | inline styles for wrapper (e.g. `color, width` etc) | No |
+| wrapperClassName | string | `''` | No |
 | ...rest | any of `React.HTMLProps<HTMLVideoElement>` (e.g. `height, className` etc) |  | No |
 
 

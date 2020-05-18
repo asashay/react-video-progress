@@ -18,6 +18,8 @@ interface VideoProps extends React.HTMLProps<HTMLVideoElement> {
   pathWidth?: string
   progressStart?: StartOptions
   type?: ProgressTypes
+  wrapperStyle?: React.CSSProperties
+  wrapperClassName?: string
   onLoadedMetadata?(e: React.SyntheticEvent<HTMLVideoElement>): void
   onTimeUpdate?(e: React.SyntheticEvent<HTMLVideoElement>): void
 }
@@ -182,6 +184,8 @@ export const VideoProgress = React.forwardRef<
       pathWidth = '5px',
       progressStart = StartOptions.TopLeft,
       type = ProgressTypes.OneLine,
+      wrapperStyle = {},
+      wrapperClassName = '',
       onLoadedMetadata = () => {},
       onTimeUpdate = () => {},
       ...videoProps
@@ -189,7 +193,6 @@ export const VideoProgress = React.forwardRef<
     ref
   ) => {
     const containerRef = React.useRef<HTMLDivElement>(null)
-    const videoRef = React.useRef<HTMLVideoElement>(null)
     const [duration, setDuration] = React.useState(0)
     const [currentTime, setCurrentTime] = React.useState(0)
 
@@ -228,8 +231,10 @@ export const VideoProgress = React.forwardRef<
       <div
         style={{
           display: 'inline-block',
-          position: 'relative'
+          position: 'relative',
+          ...wrapperStyle
         }}
+        className={wrapperClassName}
         ref={containerRef}
       >
         <div
@@ -265,7 +270,7 @@ export const VideoProgress = React.forwardRef<
           }}
         />
         <video
-          ref={ref ?? videoRef}
+          ref={ref}
           onLoadedMetadata={(e: React.SyntheticEvent<HTMLVideoElement>) => {
             setDuration(e.currentTarget.duration)
             onLoadedMetadata(e)
