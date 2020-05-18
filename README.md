@@ -40,11 +40,12 @@ class Example extends Component {
 | pathColor | string | `red` | No |
 | pathWidth | string | `5px` | No |
 | progressStart | one of [`BottomLeft`, `TopLeft`, `TopRight`, `BottomRight`] | `TopLeft` | No |
+| type | one of [`OneLine`, `TwoLines`] | `OneLine` | No |
 | ...rest | any of `React.HTMLProps<HTMLVideoElement>` (e.g. `height, className` etc) |  | No |
 
 
 TO-DO:
-- add ref forwarding to underlying video
+- add automated tests
 
 ## License
 
