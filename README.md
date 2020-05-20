@@ -42,7 +42,7 @@ class Example extends Component {
 |---|---|---|---|
 | pathColor | string | `red` | No |
 | pathWidth | string | `5px` | No |
-| progressStart | one of [`BottomLeft`, `TopLeft`, `TopRight`, `BottomRight`] | `TopLeft` | No |
+| progressStart | one of [`BottomLeft`, `TopLeft`, `TopRight`, `BottomRight`] | `BottomLeft` | No |
 | type | one of [`OneLine`, `TwoLines`] | `OneLine` | No |
 | wrapperStyle | inline styles for wrapper (e.g. `color, width` etc) | No |
 | wrapperClassName | string | `''` | No |
