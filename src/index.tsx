@@ -238,6 +238,7 @@ export const VideoProgress = React.forwardRef<Ref, VideoProps>(
         ref={containerRef}
       >
         <div
+          data-testid='left'
           style={{
             ...commonStyles,
             width: `${pathWidth}`,
@@ -272,10 +273,12 @@ export const VideoProgress = React.forwardRef<Ref, VideoProps>(
         <video
           ref={ref}
           onLoadedMetadata={(e: React.SyntheticEvent<HTMLVideoElement>) => {
+            console.log('onLoadedMetadata', e.currentTarget.duration)
             setDuration(e.currentTarget.duration)
             onLoadedMetadata(e)
           }}
           onTimeUpdate={(e: React.SyntheticEvent<HTMLVideoElement>) => {
+            console.log('onTimeUpdate', e.currentTarget.duration)
             setCurrentTime(e.currentTarget.currentTime)
             onTimeUpdate(e)
           }}
