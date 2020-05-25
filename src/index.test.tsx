@@ -198,8 +198,8 @@ describe('Test getLengthes', () => {
   })
 
   it(`checks bars lenghtes when progressBar starts at
-  BottomRight is of TwoLines type (2 bars visible)`, () => {
-    const path = 150
+  BottomRight is of TwoLines type (4 bars visible)`, () => {
+    const path = 450
     const width = 300
     const height = 200
     const progressStart = 'BottomRight'
@@ -211,10 +211,10 @@ describe('Test getLengthes', () => {
       progressStart,
       type
     })
-    expect(left).toEqual(0)
-    expect(top).toEqual(0)
-    expect(right).toEqual(path)
-    expect(bottom).toEqual(path)
+    expect(left).toEqual(path - width)
+    expect(top).toEqual(path - height)
+    expect(right).toEqual(height)
+    expect(bottom).toEqual(width)
   })
 })
 
