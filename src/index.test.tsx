@@ -240,8 +240,8 @@ describe('Test getBarsPositions', () => {
       'TwoLines'
     )
     expect(topBar).toEqual({ left: 0, top: 0 })
-    expect(rightBar).toEqual({ right: 0, top: 0 })
-    expect(bottomBar).toEqual({ right: 0, bottom: 0 })
+    expect(rightBar).toEqual({ right: 0, bottom: 0 })
+    expect(bottomBar).toEqual({ left: 0, bottom: 0 })
     expect(leftBar).toEqual({ left: 0, bottom: 0 })
   })
 
