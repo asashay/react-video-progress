@@ -234,6 +234,19 @@ describe('Test getBarsPositions', () => {
 
   it(`checks getBarsPositions to calculate bars
         bars positions properly when progressBar starts at
+        BottomLeft is of TwoLines type`, () => {
+    const { topBar, rightBar, bottomBar, leftBar } = getBarsPositions(
+      'BottomLeft',
+      'TwoLines'
+    )
+    expect(topBar).toEqual({ left: 0, top: 0 })
+    expect(rightBar).toEqual({ right: 0, top: 0 })
+    expect(bottomBar).toEqual({ right: 0, bottom: 0 })
+    expect(leftBar).toEqual({ left: 0, bottom: 0 })
+  })
+
+  it(`checks getBarsPositions to calculate bars
+        bars positions properly when progressBar starts at
         TopLeft is of TwoLines type`, () => {
     const { topBar, rightBar, bottomBar, leftBar } = getBarsPositions(
       'TopLeft',

@@ -108,8 +108,6 @@ export function getBarsPositions(
         rightBar.top = 0
         bottomBar.right = 0
         break
-      default:
-        break
     }
   } else if (progressType === ProgressTypes.TwoLines) {
     switch (progressStart) {
@@ -136,8 +134,6 @@ export function getBarsPositions(
         topBar.right = 0
         rightBar.bottom = 0
         bottomBar.right = 0
-        break
-      default:
         break
     }
   }
