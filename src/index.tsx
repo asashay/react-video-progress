@@ -21,7 +21,6 @@ export function getLengthes({
   let bottom = 0
   let left = 0
 
-  // travis test
   if (type === ProgressTypes.OneLine) {
     switch (progressStart) {
       case StartOptions.BottomLeft:

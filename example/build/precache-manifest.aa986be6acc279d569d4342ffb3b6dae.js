@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "86a1c73192600cb368af0a7467d67805",
+    "revision": "bd79c406601406e0d7ff3257943941e0",
     "url": "/react-video-progress/index.html"
   },
   {
-    "revision": "87f0cfabc6c98e9498fa",
+    "revision": "7853133e39e39c3ae3ba",
     "url": "/react-video-progress/static/css/main.0a2e4930.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-video-progress/static/js/2.78b3ca5b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "87f0cfabc6c98e9498fa",
-    "url": "/react-video-progress/static/js/main.e4f7dc3f.chunk.js"
+    "revision": "7853133e39e39c3ae3ba",
+    "url": "/react-video-progress/static/js/main.c041230b.chunk.js"
   },
   {
     "revision": "f95e8decc541afd0417b",
