@@ -1,18 +1,7 @@
 import * as React from 'react'
+import { Ref, VideoProps, StartOptions, ProgressTypes } from './types'
 
 // import styles from './styles.module.css'
-
-enum StartOptions {
-  BottomLeft = 'BottomLeft',
-  TopLeft = 'TopLeft',
-  TopRight = 'TopRight',
-  BottomRight = 'BottomRight'
-}
-
-enum ProgressTypes {
-  OneLine = 'OneLine',
-  TwoLines = 'TwoLines'
-}
 
 export function getLengthes({
   path,
@@ -61,8 +50,6 @@ export function getLengthes({
         right =
           path > height * 2 + width * 2 ? height : path - width * 2 - height
         break
-      default:
-        break
     }
   } else if (type === ProgressTypes.TwoLines) {
     switch (progressStart) {
@@ -89,8 +76,6 @@ export function getLengthes({
         bottom = path > width ? width : path
         top = path > height + width ? width : path - height
         left = path > height + width ? height : path - width
-        break
-      default:
         break
     }
   }
@@ -163,19 +148,6 @@ export function getBarsPositions(
     bottomBar
   }
 }
-
-interface VideoProps extends React.ComponentPropsWithoutRef<'video'> {
-  pathColor?: string
-  pathWidth?: string
-  progressStart?: StartOptions
-  type?: ProgressTypes
-  wrapperStyle?: React.CSSProperties
-  wrapperClassName?: string
-  onLoadedMetadata?(e: React.SyntheticEvent<HTMLVideoElement>): void
-  onTimeUpdate?(e: React.SyntheticEvent<HTMLVideoElement>): void
-}
-
-type Ref = HTMLVideoElement | null
 
 export const VideoProgress = React.forwardRef<Ref, VideoProps>(
   (
@@ -274,12 +246,10 @@ export const VideoProgress = React.forwardRef<Ref, VideoProps>(
         <video
           ref={ref}
           onLoadedMetadata={(e: React.SyntheticEvent<HTMLVideoElement>) => {
-            console.log('onLoadedMetadata', e.currentTarget.duration)
             setDuration(e.currentTarget.duration)
             onLoadedMetadata(e)
           }}
           onTimeUpdate={(e: React.SyntheticEvent<HTMLVideoElement>) => {
-            console.log('onTimeUpdate', e.currentTarget.duration)
             setCurrentTime(e.currentTarget.currentTime)
             onTimeUpdate(e)
           }}
