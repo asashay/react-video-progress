@@ -18,6 +18,7 @@ const App = () => {
       controls
       src='http://techslides.com/demos/sample-videos/small.mp4'
       height="200px"
+      wrapperStyle={{ marginTop: '20px'}}
       ref={testRef}
     />
   </div>

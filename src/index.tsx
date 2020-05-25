@@ -59,7 +59,7 @@ export function getLengthes({
         left = path > height + width ? height : path - width
         top = path > width * 2 + height ? width : path - height - width
         right =
-          path > height * 2 + width * 2 ? height : path - height * 2 - width
+          path > height * 2 + width * 2 ? height : path - width * 2 - height
         break
       default:
         break
@@ -219,7 +219,8 @@ export const VideoProgress = React.forwardRef<Ref, VideoProps>(
     const commonStyles: React.CSSProperties = {
       position: 'absolute',
       zIndex: 2,
-      backgroundColor: pathColor
+      backgroundColor: pathColor,
+      animation: '1s linear'
     }
 
     const { leftBar, topBar, rightBar, bottomBar } = getBarsPositions(
