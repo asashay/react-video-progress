@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { render, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { VideoProgress, getLengthes, getBarsPositions } from './.'
 
@@ -33,6 +33,26 @@ describe('VideoProgress', () => {
 
     // 1 outer div and 4 bars
     expect(bars.length).toEqual(5)
+  })
+
+  it('calls passed onLoadedMetadata function', () => {
+    const onLoadedMetadata = jest.fn()
+    const { container } = render(
+      <VideoProgress onLoadedMetadata={onLoadedMetadata} />
+    )
+    const video = container.querySelector('video')
+
+    fireEvent.loadedMetadata(video)
+    expect(onLoadedMetadata).toHaveBeenCalled()
+  })
+
+  it('calls passed onTimeUpdate function', () => {
+    const onTimeUpdate = jest.fn()
+    const { container } = render(<VideoProgress onTimeUpdate={onTimeUpdate} />)
+    const video = container.querySelector('video')
+
+    fireEvent.timeUpdate(video)
+    expect(onTimeUpdate).toHaveBeenCalled()
   })
 })
 

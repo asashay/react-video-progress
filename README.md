@@ -44,13 +44,9 @@ class Example extends Component {
 | pathWidth | string | `5px` | No |
 | progressStart | one of [`BottomLeft`, `TopLeft`, `TopRight`, `BottomRight`] | `BottomLeft` | No |
 | type | one of [`OneLine`, `TwoLines`] | `OneLine` | No |
-| wrapperStyle | inline styles for wrapper (e.g. `color, width` etc) | No |
+| wrapperStyle | inline styles for wrapper (e.g. `color, width` etc) |  | No |
 | wrapperClassName | string | `''` | No |
 | ...rest | any of `React.HTMLProps<HTMLVideoElement>` (e.g. `height, className` etc) |  | No |
-
-
-TO-DO:
-- add automated tests
 
 ## License
 
