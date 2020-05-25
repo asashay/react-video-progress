@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-video-progress/static/css/main.0a2e4930.chunk.css",
+    "main.js": "/react-video-progress/static/js/main.e4f7dc3f.chunk.js",
+    "main.js.map": "/react-video-progress/static/js/main.e4f7dc3f.chunk.js.map",
+    "runtime-main.js": "/react-video-progress/static/js/runtime-main.d0a862b6.js",
+    "runtime-main.js.map": "/react-video-progress/static/js/runtime-main.d0a862b6.js.map",
+    "static/js/2.78b3ca5b.chunk.js": "/react-video-progress/static/js/2.78b3ca5b.chunk.js",
+    "static/js/2.78b3ca5b.chunk.js.map": "/react-video-progress/static/js/2.78b3ca5b.chunk.js.map",
+    "index.html": "/react-video-progress/index.html",
+    "precache-manifest.1cd3af36cd69a6e0b4c8e6a3fc034b45.js": "/react-video-progress/precache-manifest.1cd3af36cd69a6e0b4c8e6a3fc034b45.js",
+    "service-worker.js": "/react-video-progress/service-worker.js",
+    "static/css/main.0a2e4930.chunk.css.map": "/react-video-progress/static/css/main.0a2e4930.chunk.css.map",
+    "static/js/2.78b3ca5b.chunk.js.LICENSE.txt": "/react-video-progress/static/js/2.78b3ca5b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d0a862b6.js",
+    "static/js/2.78b3ca5b.chunk.js",
+    "static/css/main.0a2e4930.chunk.css",
+    "static/js/main.e4f7dc3f.chunk.js"
+  ]
+}

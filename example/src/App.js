@@ -19,7 +19,7 @@ const App = () => {
       pathWidth="7px"
       type="OneLine"
       controls
-      src='http://techslides.com/demos/sample-videos/small.mp4'
+      src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
       height="200px"
       ref={testRef}
     />
@@ -30,7 +30,7 @@ const App = () => {
       pathWidth="7px"
       type="TwoLines"
       controls
-      src='http://techslides.com/demos/sample-videos/small.mp4'
+      src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
       height="200px"
       ref={testRef}
     />
