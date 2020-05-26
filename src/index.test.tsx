@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
-import { VideoProgress, START, TYPE } from './.'
+import { VideoProgress, START, LINE_TYPE } from './.'
 import { getLengthes, getBarsPositions } from './helpers'
 
 describe('VideoProgress', () => {
@@ -64,7 +64,7 @@ describe('Test getLengthes function', () => {
     const width = 300
     const height = 200
     const progressStart = START.BottomLeft
-    const type = TYPE.OneLine
+    const type = LINE_TYPE.OneLine
     const { top, right, bottom, left } = getLengthes({
       path,
       width,
@@ -225,7 +225,7 @@ describe('Test getBarsPositions function', () => {
         BottomLeft is of OneLine type`, () => {
     const { topBar, rightBar, bottomBar, leftBar } = getBarsPositions(
       START.BottomLeft,
-      TYPE.OneLine
+      LINE_TYPE.OneLine
     )
     expect(topBar).toEqual({ left: 0, top: 0 })
     expect(rightBar).toEqual({ right: 0, top: 0 })
@@ -238,7 +238,7 @@ describe('Test getBarsPositions function', () => {
         BottomLeft is of TwoLines type`, () => {
     const { topBar, rightBar, bottomBar, leftBar } = getBarsPositions(
       START.BottomLeft,
-      TYPE.TwoLines
+      LINE_TYPE.TwoLines
     )
     expect(topBar).toEqual({ left: 0, top: 0 })
     expect(rightBar).toEqual({ right: 0, bottom: 0 })
@@ -251,7 +251,7 @@ describe('Test getBarsPositions function', () => {
         TopLeft is of TwoLines type`, () => {
     const { topBar, rightBar, bottomBar, leftBar } = getBarsPositions(
       START.TopLeft,
-      TYPE.TwoLines
+      LINE_TYPE.TwoLines
     )
     expect(topBar).toEqual({ left: 0, top: 0 })
     expect(rightBar).toEqual({ right: 0, top: 0 })
@@ -264,7 +264,7 @@ describe('Test getBarsPositions function', () => {
         TopRight is of TwoLines type`, () => {
     const { topBar, rightBar, bottomBar, leftBar } = getBarsPositions(
       START.TopRight,
-      TYPE.TwoLines
+      LINE_TYPE.TwoLines
     )
     expect(topBar).toEqual({ right: 0, top: 0 })
     expect(rightBar).toEqual({ right: 0, top: 0 })
@@ -277,7 +277,7 @@ describe('Test getBarsPositions function', () => {
         BottomRight is of TwoLines type`, () => {
     const { topBar, rightBar, bottomBar, leftBar } = getBarsPositions(
       START.BottomRight,
-      TYPE.TwoLines
+      LINE_TYPE.TwoLines
     )
     expect(topBar).toEqual({ right: 0, top: 0 })
     expect(rightBar).toEqual({ right: 0, bottom: 0 })
@@ -294,8 +294,8 @@ describe('Test types', () => {
     expect(START.BottomRight).toEqual('BottomRight')
   })
 
-  it('checks TYPE types', () => {
-    expect(TYPE.OneLine).toEqual('OneLine')
-    expect(TYPE.TwoLines).toEqual('TwoLines')
+  it('checks LINE_TYPE types', () => {
+    expect(LINE_TYPE.OneLine).toEqual('OneLine')
+    expect(LINE_TYPE.TwoLines).toEqual('TwoLines')
   })
 })
