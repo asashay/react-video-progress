@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/react-video-progress/static/css/main.0a2e4930.chunk.css",
-    "main.js": "/react-video-progress/static/js/main.c041230b.chunk.js",
-    "main.js.map": "/react-video-progress/static/js/main.c041230b.chunk.js.map",
+    "main.js": "/react-video-progress/static/js/main.c11d5c84.chunk.js",
+    "main.js.map": "/react-video-progress/static/js/main.c11d5c84.chunk.js.map",
     "runtime-main.js": "/react-video-progress/static/js/runtime-main.d0a862b6.js",
     "runtime-main.js.map": "/react-video-progress/static/js/runtime-main.d0a862b6.js.map",
-    "static/js/2.78b3ca5b.chunk.js": "/react-video-progress/static/js/2.78b3ca5b.chunk.js",
-    "static/js/2.78b3ca5b.chunk.js.map": "/react-video-progress/static/js/2.78b3ca5b.chunk.js.map",
+    "static/js/2.c3c8b948.chunk.js": "/react-video-progress/static/js/2.c3c8b948.chunk.js",
+    "static/js/2.c3c8b948.chunk.js.map": "/react-video-progress/static/js/2.c3c8b948.chunk.js.map",
     "index.html": "/react-video-progress/index.html",
-    "precache-manifest.aa986be6acc279d569d4342ffb3b6dae.js": "/react-video-progress/precache-manifest.aa986be6acc279d569d4342ffb3b6dae.js",
+    "precache-manifest.5a3d2434aa1daec0d9705f84e310aedb.js": "/react-video-progress/precache-manifest.5a3d2434aa1daec0d9705f84e310aedb.js",
     "service-worker.js": "/react-video-progress/service-worker.js",
     "static/css/main.0a2e4930.chunk.css.map": "/react-video-progress/static/css/main.0a2e4930.chunk.css.map",
-    "static/js/2.78b3ca5b.chunk.js.LICENSE.txt": "/react-video-progress/static/js/2.78b3ca5b.chunk.js.LICENSE.txt"
+    "static/js/2.c3c8b948.chunk.js.LICENSE.txt": "/react-video-progress/static/js/2.c3c8b948.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d0a862b6.js",
-    "static/js/2.78b3ca5b.chunk.js",
+    "static/js/2.c3c8b948.chunk.js",
     "static/css/main.0a2e4930.chunk.css",
-    "static/js/main.c041230b.chunk.js"
+    "static/js/main.c11d5c84.chunk.js"
   ]
 }
