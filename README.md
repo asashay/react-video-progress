@@ -7,6 +7,8 @@
 ## Demo
 ![Video Progressbar Demo](demo/demo.gif)
 
+[More samples](https://asashay.github.io/react-video-progress/)
+
 ## Install
 
 ```bash
