@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { VideoProgress } from 'react-video-progress'
+import { VideoProgress, START, LINE_TYPE } from 'react-video-progress'
 import 'react-video-progress/dist/index.css'
 
 const App = () => {
@@ -14,10 +14,10 @@ const App = () => {
     <h1>Usage examples</h1>
     <h2>With one line:</h2>
     <VideoProgress
-      progressStart="BottomLeft"
-      pathColor="red"
-      pathWidth="7px"
-      type="OneLine"
+      progressStart={START.BottomLeft}
+      type={LINE_TYPE.OneLine}
+      pathColor="#e63946"
+      pathWidth="4px"
       controls
       src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
       height="200px"
@@ -25,10 +25,10 @@ const App = () => {
     />
     <h2>With two lines:</h2>
     <VideoProgress
-      progressStart="BottomLeft"
-      pathColor="blue"
-      pathWidth="7px"
-      type="TwoLines"
+      progressStart={START.BottomLeft}
+      type={LINE_TYPE.TwoLines}
+      pathColor="#3a86ff"
+      pathWidth="4px"
       controls
       src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
       height="200px"

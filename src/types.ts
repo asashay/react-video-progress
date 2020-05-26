@@ -1,11 +1,11 @@
-export enum StartOptions {
+export enum START {
   BottomLeft = 'BottomLeft',
   TopLeft = 'TopLeft',
   TopRight = 'TopRight',
   BottomRight = 'BottomRight'
 }
 
-export enum ProgressTypes {
+export enum LINE_TYPE {
   OneLine = 'OneLine',
   TwoLines = 'TwoLines'
 }
@@ -13,8 +13,8 @@ export enum ProgressTypes {
 export interface VideoProps extends React.ComponentPropsWithoutRef<'video'> {
   pathColor?: string
   pathWidth?: string
-  progressStart?: StartOptions
-  type?: ProgressTypes
+  progressStart?: START
+  type?: LINE_TYPE
   wrapperStyle?: React.CSSProperties
   wrapperClassName?: string
   onLoadedMetadata?(e: React.SyntheticEvent<HTMLVideoElement>): void
