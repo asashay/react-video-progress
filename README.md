@@ -46,10 +46,10 @@ Also it takes in all the `<video>` props and passes them down to the underlying 
 ## Props
 | Prop | Type | Default | Description |
 |---|---|---|---|
-| pathColor | string | `red` |
-| pathWidth | string | `3px` |
-| progressStart | `START` | `BottomLeft` | One of `BottomLeft`, `TopLeft`, `TopRight`, `BottomRight`
-| type | `LINE_TYPE` | `OneLine` | One of `OneLine`, `TwoLines`
+| pathColor | string | `red` | Any valid color string (e.g. `#ffffff, rgb(0,0,0)` )
+| pathWidth | string | `3px` | Any valid width value (e.g. `2em, .5rem`)
+| progressStart | `START` | `BottomLeft` | One of `BottomLeft, TopLeft, TopRight, BottomRight`
+| type | `LINE_TYPE` | `OneLine` | One of `OneLine, TwoLines`
 | wrapperStyle | object | `{}` | inline styles for wrapper (e.g. `{ color: 'black', width: '30px' }`)
 | wrapperClassName | string | `''` | Class assigned to wrapper
 | ...rest | any of [HTMLVideoElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement) props | | Any of `<video>` attributes (e.g. `autoplay, width, className` etc) |
