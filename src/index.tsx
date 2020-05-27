@@ -8,7 +8,7 @@ export const VideoProgress = React.forwardRef<Ref, VideoProps>(
   (
     {
       pathColor = 'red',
-      pathWidth = '3px',
+      pathWidth = '0',
       progressStart = START.BottomLeft,
       type = LINE_TYPE.OneLine,
       wrapperStyle = {},
@@ -98,6 +98,7 @@ export const VideoProgress = React.forwardRef<Ref, VideoProps>(
           }}
         />
         <video
+          style={{ display: 'inline-block' }}
           ref={ref}
           onLoadedMetadata={(e: React.SyntheticEvent<HTMLVideoElement>) => {
             setDuration(e.currentTarget.duration)
