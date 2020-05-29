@@ -50,7 +50,7 @@ Also it takes in all the `<video>` props and passes them down to the underlying 
 | pathWidth | string | `3px` | Any valid width value (e.g. `2em, .5rem`)
 | progressStart | `START` | `BottomLeft` | One of `BottomLeft, TopLeft, TopRight, BottomRight`
 | type | `LINE_TYPE` | `OneLine` | One of `OneLine, TwoLines`
-| wrapperStyle | object | `{}` | inline styles for wrapper (e.g. `{ color: 'black', width: '30px' }`)
+| wrapperStyle | object | `{ display: 'inline-block', position: 'relative',}` | inline styles for wrapper `div`
 | wrapperClassName | string | `''` | Class assigned to wrapper
 | ...rest | any of [HTMLVideoElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement) props | | Any of `<video>` attributes (e.g. `autoplay, width, className` etc) |
 

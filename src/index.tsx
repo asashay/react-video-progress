@@ -98,7 +98,7 @@ export const VideoProgress = React.forwardRef<Ref, VideoProps>(
           }}
         />
         <video
-          style={{ display: 'inline-block' }}
+          style={{ display: 'block' }}
           ref={ref}
           onLoadedMetadata={(e: React.SyntheticEvent<HTMLVideoElement>) => {
             setDuration(e.currentTarget.duration)
