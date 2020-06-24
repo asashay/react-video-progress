@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/react-video-progress/static/css/main.0a2e4930.chunk.css",
-    "main.js": "/react-video-progress/static/js/main.52e44fe7.chunk.js",
-    "main.js.map": "/react-video-progress/static/js/main.52e44fe7.chunk.js.map",
-    "runtime-main.js": "/react-video-progress/static/js/runtime-main.d0a862b6.js",
-    "runtime-main.js.map": "/react-video-progress/static/js/runtime-main.d0a862b6.js.map",
-    "static/js/2.78b3ca5b.chunk.js": "/react-video-progress/static/js/2.78b3ca5b.chunk.js",
-    "static/js/2.78b3ca5b.chunk.js.map": "/react-video-progress/static/js/2.78b3ca5b.chunk.js.map",
+    "main.css": "/react-video-progress/static/css/main.42cc8b22.chunk.css",
+    "main.js": "/react-video-progress/static/js/main.5b712ad4.chunk.js",
+    "main.js.map": "/react-video-progress/static/js/main.5b712ad4.chunk.js.map",
+    "runtime-main.js": "/react-video-progress/static/js/runtime-main.c12db4ea.js",
+    "runtime-main.js.map": "/react-video-progress/static/js/runtime-main.c12db4ea.js.map",
+    "static/js/2.8811a0f3.chunk.js": "/react-video-progress/static/js/2.8811a0f3.chunk.js",
+    "static/js/2.8811a0f3.chunk.js.map": "/react-video-progress/static/js/2.8811a0f3.chunk.js.map",
     "index.html": "/react-video-progress/index.html",
-    "precache-manifest.551282858339856de65b4b3f8428b2e5.js": "/react-video-progress/precache-manifest.551282858339856de65b4b3f8428b2e5.js",
+    "precache-manifest.984dc0ac66bcbed6d6fb9b4d4e5473e7.js": "/react-video-progress/precache-manifest.984dc0ac66bcbed6d6fb9b4d4e5473e7.js",
     "service-worker.js": "/react-video-progress/service-worker.js",
-    "static/css/main.0a2e4930.chunk.css.map": "/react-video-progress/static/css/main.0a2e4930.chunk.css.map",
-    "static/js/2.78b3ca5b.chunk.js.LICENSE.txt": "/react-video-progress/static/js/2.78b3ca5b.chunk.js.LICENSE.txt"
+    "static/css/main.42cc8b22.chunk.css.map": "/react-video-progress/static/css/main.42cc8b22.chunk.css.map",
+    "static/js/2.8811a0f3.chunk.js.LICENSE.txt": "/react-video-progress/static/js/2.8811a0f3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.d0a862b6.js",
-    "static/js/2.78b3ca5b.chunk.js",
-    "static/css/main.0a2e4930.chunk.css",
-    "static/js/main.52e44fe7.chunk.js"
+    "static/js/runtime-main.c12db4ea.js",
+    "static/js/2.8811a0f3.chunk.js",
+    "static/css/main.42cc8b22.chunk.css",
+    "static/js/main.5b712ad4.chunk.js"
   ]
 }
