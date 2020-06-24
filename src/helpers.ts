@@ -75,6 +75,8 @@ export function getLengthes({
         left = path > height + width ? height : path - width
         break
     }
+  } else if (type === LINE_TYPE.BottomLine) {
+    bottom = path > width ? width : path
   }
 
   return {
@@ -132,6 +134,18 @@ export function getBarsPositions(
         bottomBar.right = 0
         break
     }
+  } else if (progressType === LINE_TYPE.BottomLine) {
+    switch (progressStart) {
+      case START.BottomLeft:
+        bottomBar.left = 0
+        break
+      case START.BottomRight:
+        bottomBar.right = 0
+        break
+      default:
+        bottomBar.left = 0
+        break
+    }
   }
 
   return {
@@ -139,5 +153,26 @@ export function getBarsPositions(
     topBar,
     rightBar,
     bottomBar
+  }
+}
+
+export function getTotalLength({
+  width,
+  height,
+  progressStart
+}: {
+  width: number
+  height: number
+  progressStart: LINE_TYPE
+}): number {
+  switch (progressStart) {
+    case LINE_TYPE.OneLine:
+      return (width + height) * 2
+    case LINE_TYPE.TwoLines:
+      return width + height
+    case LINE_TYPE.BottomLine:
+      return width
+    default:
+      return 0
   }
 }

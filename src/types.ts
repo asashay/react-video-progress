@@ -7,7 +7,8 @@ export enum START {
 
 export enum LINE_TYPE {
   OneLine = 'OneLine',
-  TwoLines = 'TwoLines'
+  TwoLines = 'TwoLines',
+  BottomLine = 'BottomLine'
 }
 
 export interface VideoProps extends React.ComponentPropsWithoutRef<'video'> {

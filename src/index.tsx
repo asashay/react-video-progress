@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Ref, VideoProps, START, LINE_TYPE } from './types'
-import { getBarsPositions, getLengthes } from './helpers'
+import { getBarsPositions, getLengthes, getTotalLength } from './helpers'
 
 // import styles from './styles.module.css'
 
@@ -30,7 +30,7 @@ export const VideoProgress = React.forwardRef<Ref, VideoProps>(
       width: 0,
       height: 0
     }
-    const totalLength = (width + height) * (type === LINE_TYPE.TwoLines ? 1 : 2)
+    const totalLength = getTotalLength({ width, height, progressStart: type })
     const step = totalLength / duration
     const path = currentTime * step
 

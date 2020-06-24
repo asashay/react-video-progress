@@ -2,7 +2,7 @@ import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { VideoProgress, START, LINE_TYPE } from './.'
-import { getLengthes, getBarsPositions } from './helpers'
+import { getLengthes, getBarsPositions, getTotalLength } from './helpers'
 
 describe('VideoProgress', () => {
   it('{ VideoProgress } is truthy', () => {
@@ -217,6 +217,46 @@ describe('Test getLengthes function', () => {
     expect(right).toEqual(height)
     expect(bottom).toEqual(width)
   })
+
+  it(`checks bars lenghtes when progressBar starts at
+  BottomLeft and is of BottomLine type`, () => {
+    const path = 200
+    const width = 300
+    const height = 200
+    const progressStart = 'BottomLeft'
+    const type = 'BottomLine'
+    const { top, right, bottom, left } = getLengthes({
+      path,
+      width,
+      height,
+      progressStart,
+      type
+    })
+    expect(left).toEqual(0)
+    expect(top).toEqual(0)
+    expect(right).toEqual(0)
+    expect(bottom).toEqual(path)
+  })
+
+  it(`checks bars lenghtes when progressBar starts at
+  BottomRight and is of BottomLine type`, () => {
+    const path = 400
+    const width = 300
+    const height = 200
+    const progressStart = 'BottomLeft'
+    const type = 'BottomLine'
+    const { top, right, bottom, left } = getLengthes({
+      path,
+      width,
+      height,
+      progressStart,
+      type
+    })
+    expect(left).toEqual(0)
+    expect(top).toEqual(0)
+    expect(right).toEqual(0)
+    expect(bottom).toEqual(width)
+  })
 })
 
 describe('Test getBarsPositions function', () => {
@@ -284,6 +324,70 @@ describe('Test getBarsPositions function', () => {
     expect(bottomBar).toEqual({ right: 0, bottom: 0 })
     expect(leftBar).toEqual({ left: 0, bottom: 0 })
   })
+
+  it(`checks getBarsPositions to calculate bars
+        bars positions properly when progressBar starts at
+        BottomRight is of BottomLine type`, () => {
+    const { topBar, rightBar, bottomBar, leftBar } = getBarsPositions(
+      START.BottomRight,
+      LINE_TYPE.BottomLine
+    )
+    expect(topBar).toEqual({ top: 0 })
+    expect(rightBar).toEqual({ right: 0 })
+    expect(bottomBar).toEqual({ right: 0, bottom: 0 })
+    expect(leftBar).toEqual({ left: 0 })
+  })
+
+  it(`checks getBarsPositions to calculate bars
+        bars positions properly when progressBar starts at
+        BottomLeft is of BottomLine type`, () => {
+    const { topBar, rightBar, bottomBar, leftBar } = getBarsPositions(
+      START.BottomLeft,
+      LINE_TYPE.BottomLine
+    )
+    expect(topBar).toEqual({ top: 0 })
+    expect(rightBar).toEqual({ right: 0 })
+    expect(bottomBar).toEqual({ left: 0, bottom: 0 })
+    expect(leftBar).toEqual({ left: 0 })
+  })
+})
+
+describe('Test getTotalLength function', () => {
+  it(`checks getTotalLength to calculate bar
+    when progress line of OneLine type`, () => {
+    const width = 300
+    const height = 200
+    const totalLength = getTotalLength({
+      width,
+      height,
+      progressStart: LINE_TYPE.OneLine
+    })
+    expect(totalLength).toEqual((width + height) * 2)
+  })
+
+  it(`checks getTotalLength to calculate bar
+    when progress line of TwoLines type`, () => {
+    const width = 300
+    const height = 200
+    const totalLength = getTotalLength({
+      width,
+      height,
+      progressStart: LINE_TYPE.TwoLines
+    })
+    expect(totalLength).toEqual(width + height)
+  })
+
+  it(`checks getTotalLength to calculate bar
+    when progress line of BottomLine type`, () => {
+    const width = 300
+    const height = 200
+    const totalLength = getTotalLength({
+      width,
+      height,
+      progressStart: LINE_TYPE.BottomLine
+    })
+    expect(totalLength).toEqual(width)
+  })
 })
 
 describe('Test types', () => {
@@ -297,5 +401,6 @@ describe('Test types', () => {
   it('checks LINE_TYPE types', () => {
     expect(LINE_TYPE.OneLine).toEqual('OneLine')
     expect(LINE_TYPE.TwoLines).toEqual('TwoLines')
+    expect(LINE_TYPE.BottomLine).toEqual('BottomLine')
   })
 })
