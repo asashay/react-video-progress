@@ -28,8 +28,8 @@ import { VideoProgress } from 'react-video-progress'
 class Example extends Component {
   render() {
     return <VideoProgress
-      progressStart={START.BottomLeft}
-      type={LINE_TYPE.OneLine}
+      progressStart="BottomLeft"
+      type="OneLine"
       pathColor="red"
       pathWidth="4px"
       src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
