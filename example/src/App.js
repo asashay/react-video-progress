@@ -30,7 +30,6 @@ const App = () => {
         />
         <h2>With only bottom line:</h2>
         <VideoProgress
-          progressStart={'BottomRight'}
           type={'BottomLine'}
           pathColor="#06d6a0"
           pathWidth="4px"

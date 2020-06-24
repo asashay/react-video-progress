@@ -7,7 +7,7 @@
 ## Demo
 ![Video Progressbar Demo](demo/demo.gif)
 
-[More samples](https://asashay.github.io/react-video-progress/)
+[Live samples](https://asashay.github.io/react-video-progress/)
 
 ## Installation
 
@@ -23,7 +23,7 @@ yarn add react-video-progress
 ```tsx
 import React, { Component } from 'react'
 
-import { VideoProgress, START, LINE_TYPE} from 'react-video-progress'
+import { VideoProgress } from 'react-video-progress'
 
 class Example extends Component {
   render() {
@@ -44,6 +44,8 @@ Also it takes in all the `<video>` props and passes them down to the underlying 
 
 
 ## Props
+All props are optional.
+
 | Prop | Type | Default | Description |
 |---|---|---|---|
 | pathColor | `string` | `red` | Any valid color string (e.g. `#ffffff, rgb(0,0,0)` )
