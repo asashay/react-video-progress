@@ -53,8 +53,10 @@
     "prettier": "^2.0.4",
     "puppeteer": "^3.1.0",
     "react": "^16.13.1",
+    "react-docgen-typescript": "^1.20.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^3.4.1",
+    "react-styleguidist": "^11.0.8"
   },
   "files": [
     "dist"
