@@ -44,17 +44,28 @@ Also it takes in all the `<video>` props and passes them down to the underlying 
 
 
 ## Props
-All props are optional.
+All props are **optional**.
 
-| Prop | Type | Default | Description |
-|---|---|---|---|
-| pathColor | `string` | `red` | Any valid color string (e.g. `#ffffff, rgb(0,0,0)` )
-| pathWidth | `string` | `3px` | Any valid width value (e.g. `2em, .5rem`)
-| progressStart | `string` | `BottomLeft` | One of `BottomLeft, TopLeft, TopRight, BottomRight`
-| type | `string` | `OneLine` | One of `OneLine, TwoLines, BottomLine`
-| wrapperStyle | object | `{ display: 'inline-block', position: 'relative',}` | inline styles for wrapper `div`
-| wrapperClassName | string | `''` | Class assigned to wrapper
-| ...rest | any of [HTMLVideoElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement) props | | Any of `<video>` attributes (e.g. `autoplay, width, className` etc) |
+* `pathColor`: String, default `red`
+  * Any valid color string (e.g. `#ffffff, rgb(0,0,0)` )
+
+* `pathWidth`: String, default `3px`
+  * Any valid width value (e.g. `2em, .5rem`)
+
+* `progressStart`: String, default `BottomLeft`
+  * One of `BottomLeft, TopLeft, TopRight, BottomRight`
+
+* `type`: String, default `OneLine`
+  * One of `OneLine, TwoLines, BottomLine`
+
+* `wrapperStyle`: Object, default `{ display: 'inline-block', position: 'relative'}`
+  * inline styles for wrapper `div`
+
+* `wrapperClassName`: String, default `''`
+  * Class assigned to wrapper
+
+* ...rest: any of [HTMLVideoElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement) props
+  * Any of `<video>` attributes (e.g. `autoplay, width, className` etc)
 
 ## License
 
