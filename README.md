@@ -65,7 +65,7 @@ All props are **optional**.
   * Class assigned to wrapper
 
 * ...rest: any of [HTMLVideoElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement) props
-  * Any of `<video>` attributes (e.g. `autoplay, width, className` etc)
+  * Any of `<video>` attributes (e.g. `autoPlay, width, className` etc)
 
 ## License
 
