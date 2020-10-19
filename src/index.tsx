@@ -45,8 +45,7 @@ export const VideoProgress = React.forwardRef<Ref, VideoProps>(
     const commonStyles: React.CSSProperties = {
       position: 'absolute',
       zIndex: 2,
-      backgroundColor: pathColor,
-      animation: '1s linear'
+      backgroundColor: pathColor
     }
 
     const { leftBar, topBar, rightBar, bottomBar } = getBarsPositions(
