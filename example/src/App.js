@@ -33,6 +33,7 @@ const App = () => {
           type={'BottomLine'}
           pathColor="#06d6a0"
           pathWidth="4px"
+          pathBorderRadius="2px"
           controls
           src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
           height="200px"

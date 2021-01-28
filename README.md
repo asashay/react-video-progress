@@ -32,6 +32,7 @@ class Example extends Component {
       type="OneLine"
       pathColor="red"
       pathWidth="4px"
+      pathBorderRadius="2px"
       src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
       height="200px"
       controls
@@ -52,6 +53,9 @@ All props are **optional**.
 * `pathWidth`: String, default `3px`
   * Any valid width value (e.g. `2em, .5rem`)
 
+* `pathBorderRadius`: String, default `0`
+  * Any valid border radius value (e.g. `2px, 5%`)
+
 * `progressStart`: String, default `BottomLeft`
   * One of `BottomLeft, TopLeft, TopRight, BottomRight`
 
@@ -70,3 +74,4 @@ All props are **optional**.
 ## License
 
 MIT © [asashay](https://github.com/asashay)
+

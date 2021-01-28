@@ -14,6 +14,7 @@ export enum LINE_TYPE {
 export interface VideoProps extends React.ComponentPropsWithoutRef<'video'> {
   pathColor?: string
   pathWidth?: string
+  pathBorderRadius?: string
   progressStart?: START
   type?: LINE_TYPE
   wrapperStyle?: React.CSSProperties
