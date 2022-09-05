@@ -26,7 +26,7 @@
     "test": "dts test --passWithNoTests",
     "test:coveralls": "cross-env CI=1 yarn test --coverage && cat ./coverage/lcov.info | coveralls",
     "predeploy": "cd example && yarn install && yarn build",
-    "deploy": "gh-pages -d example/build"
+    "deploy": "gh-pages -d example/dist"
   },
   "husky": {
     "hooks": {
