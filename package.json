@@ -15,25 +15,22 @@
     "node": ">=10"
   },
   "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "test": "tsdx test --passWithNoTests",
-    "test:coveralls": "cross-env CI=1 yarn test --coverage && cat ./coverage/lcov.info | coveralls",
-    "lint": "tsdx lint",
-    "prepare": "tsdx build",
-    "size": "size-limit",
     "analyze": "size-limit --why",
-    "storybook": "start-storybook -p 6006",
+    "build": "dts build",
     "build-storybook": "build-storybook",
+    "lint": "dts lint",
+    "prepare": "dts build",
+    "size": "size-limit",
+    "start": "dts watch",
+    "storybook": "start-storybook -p 6006",
+    "test": "dts test --passWithNoTests",
+    "test:coveralls": "cross-env CI=1 yarn test --coverage && cat ./coverage/lcov.info | coveralls",
     "predeploy": "cd example && yarn install && yarn build",
     "deploy": "gh-pages -d example/build"
   },
-  "peerDependencies": {
-    "react": ">=16"
-  },
   "husky": {
     "hooks": {
-      "pre-commit": "tsdx lint"
+      "pre-commit": "dts lint"
     }
   },
   "prettier": {
@@ -42,19 +39,27 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "module": "dist/react-video-progress-v2.esm.js",
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "engines": {
+    "node": ">=12"
+  },
   "size-limit": [
     {
-      "path": "dist/react-video-progress-v2.cjs.production.min.js",
+      "path": "dist/v2.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/react-video-progress-v2.esm.js",
+      "path": "dist/v2.esm.js",
       "limit": "10 KB"
     }
   ],
   "devDependencies": {
-    "@babel/core": "^7.18.13",
+    "@babel/core": "^7.19.0",
     "@size-limit/preset-small-lib": "^8.0.1",
     "@storybook/addon-essentials": "^6.5.10",
     "@storybook/addon-info": "^5.3.21",
@@ -63,15 +68,20 @@
     "@storybook/react": "^6.5.10",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
+    "@tsconfig/create-react-app": "^1.0.2",
+    "@tsconfig/recommended": "^1.0.1",
     "@types/react": "^18.0.18",
     "@types/react-dom": "^18.0.6",
     "babel-loader": "^8.2.5",
+    "coveralls": "^3.1.1",
+    "cross-env": "^7.0.3",
+    "dts-cli": "^1.6.0",
+    "gh-pages": "^4.0.0",
     "husky": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
     "size-limit": "^8.0.1",
-    "tsdx": "^0.14.1",
     "tslib": "^2.4.0",
     "typescript": "^4.8.2"
   },
@@ -80,10 +90,5 @@
     "video",
     "progress",
     "progressbar"
-  ],
-  "dependencies": {
-    "coveralls": "^3.1.1",
-    "cross-env": "^7.0.3",
-    "gh-pages": "^4.0.0"
-  }
+  ]
 }
