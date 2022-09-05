@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0",
+  "version": "2.0.0-0",
   "name": "react-video-progress",
   "author": "Alex Oliynyk",
   "description": "React component to show progress at video frame borders",
@@ -12,7 +12,7 @@
     "src"
   ],
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "scripts": {
     "analyze": "size-limit --why",
@@ -44,9 +44,6 @@
   },
   "peerDependencies": {
     "react": ">=16"
-  },
-  "engines": {
-    "node": ">=12"
   },
   "size-limit": [
     {
