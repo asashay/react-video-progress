@@ -1,6 +1,7 @@
-import React from 'react'
-
-import { VideoProgress } from 'react-video-progress'
+import 'react-app-polyfill/ie11';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { VideoProgress } from '../.';
 
 const App = () => {
   const testRef = React.useRef(null);
@@ -61,4 +62,4 @@ const App = () => {
   </div>
 }
 
-export default App
+ReactDOM.render(<App />, document.getElementById('root'));

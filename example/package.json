@@ -1,27 +1,24 @@
 {
-  "name": "react-video-progress-example",
-  "homepage": "https://asashay.github.io/react-video-progress",
-  "version": "0.0.0",
-  "private": true,
-  "dependencies": {
-    "react": "link:../node_modules/react",
-    "react-dom": "link:../node_modules/react-dom",
-    "react-scripts": "link:../node_modules/react-scripts",
-    "react-video-progress": "link:.."
-  },
+  "name": "example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
   "scripts": {
-    "start": "node ../node_modules/react-scripts/bin/react-scripts.js start",
-    "build": "node ../node_modules/react-scripts/bin/react-scripts.js build",
-    "test": "node ../node_modules/react-scripts/bin/react-scripts.js test",
-    "eject": "node ../node_modules/react-scripts/bin/react-scripts.js eject"
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "dependencies": {
+    "react-app-polyfill": "^1.0.0"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "alias": {
+    "react": "../node_modules/react",
+    "react-dom": "../node_modules/react-dom/profiling",
+    "scheduler/tracing": "../node_modules/scheduler/tracing-profiling"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.8.4",
+    "parcel": "1.12.3",
+    "typescript": "^3.4.5"
+  }
 }
