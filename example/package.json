@@ -1,7 +1,9 @@
 {
   "name": "example",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
+  "homepage": "https://asashay.github.io/react-video-progress",
+  "private": true,
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html"

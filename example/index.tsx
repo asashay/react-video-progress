@@ -6,7 +6,7 @@ import { VideoProgress } from '../dist';
 const App = () => {
   const testRef = React.useRef(null);
   return <div>
-    <h1 style={{textAlign: 'center'}}>Usage examples</h1>
+    <h1 style={{textAlign: 'center'}}>Usage examples:</h1>
     <div style={{
       display: 'flex',
       justifyContent: 'center',
