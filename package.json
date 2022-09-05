@@ -1,69 +1,89 @@
 {
+  "version": "2.0.0",
   "name": "react-video-progress",
-  "version": "1.2.0",
+  "author": "Alex Oliynyk",
   "description": "React component to show progress at video frame borders",
-  "author": "asashay",
   "license": "MIT",
   "repository": "asashay/react-video-progress",
   "main": "dist/index.js",
-  "module": "dist/index.modern.js",
-  "source": "src/index.tsx",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
   "engines": {
     "node": ">=10"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs",
-    "start": "microbundle-crl watch --no-compress --format modern,cjs",
-    "prepublish": "run-s build",
-    "test": "run-s test:unit test:lint test:build",
-    "test:build": "run-s build",
-    "test:lint": "eslint .",
-    "test:unit": "cross-env CI=1 react-scripts test --env=jsdom --coverage",
-    "test:watch": "react-scripts test --env=jsdom",
-    "test:coveralls": "cross-env CI=1 react-scripts test --env=jsdom --coverage && cat ./coverage/lcov.info | coveralls",
-    "predeploy": "cd example && yarn install && yarn run build",
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "test:coveralls": "cross-env CI=1 yarn test --coverage && cat ./coverage/lcov.info | coveralls",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "predeploy": "cd example && yarn install && yarn build",
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": ">=16"
   },
-  "devDependencies": {
-    "@testing-library/jest-dom": "^5.8.0",
-    "@testing-library/react": "^10.0.4",
-    "@types/jest": "^25.1.4",
-    "@types/react": "^16.9.27",
-    "@typescript-eslint/eslint-plugin": "^2.26.0",
-    "@typescript-eslint/parser": "^2.26.0",
-    "babel-eslint": "^10.0.3",
-    "coveralls": "^3.1.0",
-    "cross-env": "^7.0.2",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.7.0",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-config-standard-react": "^9.2.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^11.0.0",
-    "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.17.0",
-    "eslint-plugin-standard": "^4.0.1",
-    "gh-pages": "^2.2.0",
-    "microbundle-crl": "^0.13.10",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^2.0.4",
-    "puppeteer": "^3.1.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1"
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
   },
-  "files": [
-    "dist"
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "module": "dist/react-video-progress-v2.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/react-video-progress-v2.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/react-video-progress-v2.esm.js",
+      "limit": "10 KB"
+    }
   ],
+  "devDependencies": {
+    "@babel/core": "^7.18.13",
+    "@size-limit/preset-small-lib": "^8.0.1",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-info": "^5.3.21",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/addons": "^6.5.10",
+    "@storybook/react": "^6.5.10",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@types/react": "^18.0.18",
+    "@types/react-dom": "^18.0.6",
+    "babel-loader": "^8.2.5",
+    "husky": "^8.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-is": "^18.2.0",
+    "size-limit": "^8.0.1",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.2"
+  },
   "keywords": [
     "react",
     "video",
     "progress",
     "progressbar"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "coveralls": "^3.1.1",
+    "cross-env": "^7.0.3",
+    "gh-pages": "^4.0.0"
+  }
 }
