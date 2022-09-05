@@ -1,7 +1,7 @@
 import 'react-app-polyfill/ie11';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { VideoProgress } from '../.';
+import { VideoProgress } from '../dist';
 
 const App = () => {
   const testRef = React.useRef(null);
