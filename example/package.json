@@ -3,10 +3,9 @@
   "version": "1.0.1",
   "license": "MIT",
   "homepage": "https://asashay.github.io/react-video-progress",
-  "private": true,
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "start": "webpack serve --config webpack.dev.js",
+    "build": "webpack build --config webpack.prod.js"
   },
   "dependencies": {
     "react-app-polyfill": "^1.0.0"
@@ -19,7 +18,14 @@
   "devDependencies": {
     "@types/react": "^18.0.18",
     "@types/react-dom": "^18.0.6",
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
     "parcel": "^2.7.0",
-    "typescript": "^4.8.2"
+    "source-map-loader": "^4.0.0",
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.8.2",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.10.1"
   }
 }
