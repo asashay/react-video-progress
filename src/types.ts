@@ -1,3 +1,5 @@
+import React from "react";
+
 export const LINE_TYPE = {
   OneLine: 'OneLine',
   TwoLines: 'TwoLines',
@@ -15,8 +17,15 @@ type START_KEYS = keyof typeof START;
 type LINE_TYPE_KEYS = keyof typeof LINE_TYPE;
 export type START_STRINGS = typeof START[START_KEYS];
 export type LINE_TYPE_STRINGS = typeof LINE_TYPE[LINE_TYPE_KEYS];
+export type BORDERS = Pick<
+  React.CSSProperties, 
+  'borderTopLeftRadius' | 
+  'borderTopRightRadius' | 
+  'borderBottomLeftRadius' | 
+  'borderBottomRightRadius'
+>
 
-export interface VideoProps extends React.ComponentPropsWithoutRef<'video'> {
+export type VideoProps = {
   pathColor?: string;
   pathWidth?: string;
   pathBorderRadius?: string;
@@ -26,6 +35,6 @@ export interface VideoProps extends React.ComponentPropsWithoutRef<'video'> {
   wrapperClassName?: string;
   onLoadedMetadata?(e: React.SyntheticEvent<HTMLVideoElement>): void;
   onTimeUpdate?(e: React.SyntheticEvent<HTMLVideoElement>): void;
-}
+} & React.VideoHTMLAttributes<HTMLVideoElement>
 
 export type Ref = HTMLVideoElement | null;

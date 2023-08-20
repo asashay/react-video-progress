@@ -2,7 +2,7 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { VideoProgress, LINE_TYPE, START } from '../src';
-import { getLengthes, getBarsPositions, getTotalLength } from '../src/helpers';
+import { getLengthes, getBarsPositions, getTotalLength, getBorderRadiuses } from '../src/helpers';
 
 describe('VideoProgress', () => {
   it('{ VideoProgress } is truthy', () => {
@@ -405,6 +405,61 @@ describe('Test getTotalLength function', () => {
     });
     expect(totalLength).toEqual(width);
   });
+});
+
+describe('Test getBorderRadiuses function', () => {
+  const borderRadius = '4px';
+  const width = 300;
+  const height = 200;
+  const props = {
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    width,
+    height,
+    progressStart: START.BottomLeft,
+    type: LINE_TYPE.BottomLine,
+    borderRadius
+  };
+
+  describe('test borderRadiuses when progressLine of BottomLine type', () => {
+    const bottomLineProps = { ...props, type: LINE_TYPE.BottomLine }
+
+    it(`checks borderRadiuses when start of BottomLeft type`, () => {
+      const { bottomBarBorderRadiuses } = getBorderRadiuses(bottomLineProps);
+      expect(bottomBarBorderRadiuses.borderTopRightRadius).toEqual(borderRadius);
+      expect(bottomBarBorderRadiuses.borderBottomRightRadius).toEqual(borderRadius);
+      expect(bottomBarBorderRadiuses.borderTopLeftRadius).toEqual(0);
+      expect(bottomBarBorderRadiuses.borderBottomLeftRadius).toEqual(0);
+    });
+
+    it(`checks borderRadiuses when start of BottomRight type`, () => {
+      const { bottomBarBorderRadiuses } = getBorderRadiuses({...bottomLineProps, progressStart: START.BottomRight});
+      expect(bottomBarBorderRadiuses.borderTopLeftRadius).toEqual(borderRadius);
+      expect(bottomBarBorderRadiuses.borderBottomLeftRadius).toEqual(borderRadius);
+      expect(bottomBarBorderRadiuses.borderTopRightRadius).toEqual(0);
+      expect(bottomBarBorderRadiuses.borderBottomRightRadius).toEqual(0);
+    });
+  });
+
+  // describe('test borderRadiuses when progressLine of OneLine type', () => {
+  //   const oneLineProps = { ...props, type: LINE_TYPE.OneLine }
+
+  //   it(`checks borderRadiuses when start of BottomLeft type`, () => {
+  //     const { bottomBarBorderRadiuses } = getBorderRadiuses(oneLineProps);
+  //     expect(bottomBarBorderRadiuses.borderTopRightRadius).toEqual(borderRadius);
+  //     expect(bottomBarBorderRadiuses.borderBottomRightRadius).toEqual(borderRadius);
+  //   });
+
+  //   it(`checks borderRadiuses when start of BottomRight type`, () => {
+  //     const { bottomBarBorderRadiuses } = getBorderRadiuses({...props, progressStart: START.BottomRight});
+  //     expect(bottomBarBorderRadiuses.borderTopLeftRadius).toEqual(borderRadius);
+  //     expect(bottomBarBorderRadiuses.borderBottomLeftRadius).toEqual(borderRadius);
+  //   });
+  // });
+
+
 });
 
 describe('Test types', () => {

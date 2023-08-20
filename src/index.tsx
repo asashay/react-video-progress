@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Ref, VideoProps } from './types';
-import { getBarsPositions, getLengthes, getTotalLength } from './helpers';
 
+import { Ref, VideoProps } from './types';
+import { getBarsPositions, getLengthes, getTotalLength, getBorderRadiuses } from './helpers';
 // import styles from './styles.module.css'
 
 export const VideoProgress = React.forwardRef<Ref, VideoProps>(
@@ -52,8 +52,20 @@ export const VideoProgress = React.forwardRef<Ref, VideoProps>(
 
     const { leftBar, topBar, rightBar, bottomBar } = getBarsPositions(
       progressStart,
-      type
+      type,
     );
+
+    const { leftBarBorderRadiuses, rightBarBorderRadiuses, bottomBarBorderRadiuses, topBarBorderRadiuses} = getBorderRadiuses({
+      top,
+      right,
+      bottom,
+      left,
+      width,
+      height,
+      progressStart,
+      type,
+      borderRadius: pathBorderRadius
+    })
 
     return (
       <div
@@ -72,6 +84,7 @@ export const VideoProgress = React.forwardRef<Ref, VideoProps>(
             width: `${pathWidth}`,
             height: `${left}px`,
             ...leftBar,
+            ...leftBarBorderRadiuses
           }}
         />
         <div
@@ -80,6 +93,7 @@ export const VideoProgress = React.forwardRef<Ref, VideoProps>(
             width: `${top}px`,
             height: `${pathWidth}`,
             ...topBar,
+            ...topBarBorderRadiuses
           }}
         />
         <div
@@ -88,6 +102,7 @@ export const VideoProgress = React.forwardRef<Ref, VideoProps>(
             width: `${pathWidth}`,
             height: `${right}px`,
             ...rightBar,
+            ...rightBarBorderRadiuses
           }}
         />
         <div
@@ -96,6 +111,7 @@ export const VideoProgress = React.forwardRef<Ref, VideoProps>(
             width: `${bottom}px`,
             height: `${pathWidth}`,
             ...bottomBar,
+            ...bottomBarBorderRadiuses
           }}
         />
         <video

@@ -37,7 +37,7 @@ export function getLengthes({
         right = path > height + width ? height : path - width;
         bottom = path > width * 2 + height ? width : path - height - width;
         left =
-          path > height * 2 + width * 2 ? height : path - height * 2 - width;
+          path > height * 2 + width * 2 ? height : path - width * 2 - height;
         break;
       case START.TopRight:
         right = path > height ? height : path;
@@ -179,5 +179,167 @@ export function getTotalLength({
       return width;
     default:
       return 0;
+  }
+}
+
+export function getBorderRadiuses({
+  top,
+  right,
+  bottom,
+  left,
+  width,
+  height,
+  progressStart,
+  type,
+  borderRadius
+}: {
+  top: number,
+  right: number,
+  bottom: number,
+  left: number,
+  width: number,
+  height: number,
+  progressStart: START_STRINGS,
+  type: LINE_TYPE_STRINGS,
+  borderRadius: string
+}): {
+  leftBarBorderRadiuses: React.CSSProperties, 
+  rightBarBorderRadiuses: React.CSSProperties, 
+  bottomBarBorderRadiuses: React.CSSProperties, 
+  topBarBorderRadiuses: React.CSSProperties
+} {
+  const borderRadiuses: React.CSSProperties = { 
+    borderTopLeftRadius: 0,
+    borderTopRightRadius: 0,
+    borderBottomLeftRadius: 0,
+    borderBottomRightRadius: 0
+  }
+  const leftBarBorderRadiuses = { ...borderRadiuses };
+  const rightBarBorderRadiuses = { ...borderRadiuses };
+  const bottomBarBorderRadiuses = { ...borderRadiuses };
+  const topBarBorderRadiuses = { ...borderRadiuses };
+
+  if (type === LINE_TYPE.BottomLine) {
+    switch(progressStart) {
+      case START.BottomLeft:
+        bottomBarBorderRadiuses.borderTopRightRadius = borderRadius;
+        bottomBarBorderRadiuses.borderBottomRightRadius = borderRadius;
+        break;
+      case START.BottomRight:
+        bottomBarBorderRadiuses.borderTopLeftRadius = borderRadius;
+        bottomBarBorderRadiuses.borderBottomLeftRadius = borderRadius;
+        break;
+      default:
+        break;
+    }
+  } else if ( type === LINE_TYPE.OneLine) {
+    switch(progressStart) {
+      case START.BottomRight:
+      case START.TopRight:
+      case START.TopLeft:
+      case START.BottomLeft:
+        if (bottom < width) {
+          bottomBarBorderRadiuses.borderTopLeftRadius = borderRadius;
+          bottomBarBorderRadiuses.borderBottomLeftRadius = borderRadius;
+        }
+        if (right < height) {
+          rightBarBorderRadiuses.borderBottomLeftRadius = borderRadius;
+          rightBarBorderRadiuses.borderBottomRightRadius = borderRadius;
+        }
+        if (top < width) {
+          topBarBorderRadiuses.borderTopRightRadius = borderRadius;
+          topBarBorderRadiuses.borderBottomRightRadius = borderRadius;
+        }
+        if (left < height) {
+          leftBarBorderRadiuses.borderTopLeftRadius = borderRadius;
+          leftBarBorderRadiuses.borderTopRightRadius = borderRadius;
+        }
+        break;
+      default:
+        break;
+    }
+  } else if ( type === LINE_TYPE.TwoLines) {
+    switch(progressStart) {
+      case START.BottomRight:
+        if (bottom < width) {
+          bottomBarBorderRadiuses.borderTopLeftRadius = borderRadius;
+          bottomBarBorderRadiuses.borderBottomLeftRadius = borderRadius;
+        }
+        if (right < height) {
+          rightBarBorderRadiuses.borderTopLeftRadius = borderRadius;
+          rightBarBorderRadiuses.borderTopRightRadius = borderRadius;
+        }
+        if (top < width) {
+          topBarBorderRadiuses.borderTopLeftRadius = borderRadius;
+          topBarBorderRadiuses.borderBottomLeftRadius = borderRadius;
+        }
+        if (left < height) {
+          leftBarBorderRadiuses.borderTopRightRadius = borderRadius;
+          leftBarBorderRadiuses.borderTopLeftRadius = borderRadius;
+        }
+        break;
+      case START.TopRight:
+        if (bottom < width) {
+          bottomBarBorderRadiuses.borderTopLeftRadius = borderRadius;
+          bottomBarBorderRadiuses.borderBottomLeftRadius = borderRadius;
+        }
+        if (right < height) {
+          rightBarBorderRadiuses.borderBottomLeftRadius = borderRadius;
+          rightBarBorderRadiuses.borderBottomRightRadius = borderRadius;
+        }
+        if (top < width) {
+          topBarBorderRadiuses.borderTopLeftRadius = borderRadius;
+          topBarBorderRadiuses.borderBottomLeftRadius = borderRadius;
+        }
+        if (left < height) {
+          leftBarBorderRadiuses.borderBottomLeftRadius = borderRadius;
+          leftBarBorderRadiuses.borderBottomRightRadius = borderRadius;
+        }
+        break;
+      case START.TopLeft:
+        if (bottom < width) {
+          bottomBarBorderRadiuses.borderTopRightRadius = borderRadius;
+          bottomBarBorderRadiuses.borderBottomRightRadius = borderRadius;
+        }
+        if (right < height) {
+          rightBarBorderRadiuses.borderBottomLeftRadius = borderRadius;
+          rightBarBorderRadiuses.borderBottomRightRadius = borderRadius;
+        }
+        if (top < width) {
+          topBarBorderRadiuses.borderTopRightRadius = borderRadius;
+          topBarBorderRadiuses.borderBottomRightRadius = borderRadius;
+        }
+        if (left < height) {
+          leftBarBorderRadiuses.borderBottomLeftRadius = borderRadius;
+          leftBarBorderRadiuses.borderBottomRightRadius = borderRadius;
+        }
+        break;
+      case START.BottomLeft:
+        if (bottom < width) {
+          bottomBarBorderRadiuses.borderTopRightRadius = borderRadius;
+          bottomBarBorderRadiuses.borderBottomRightRadius = borderRadius;
+        }
+        if (right < height) {
+          rightBarBorderRadiuses.borderTopLeftRadius = borderRadius;
+          rightBarBorderRadiuses.borderTopRightRadius = borderRadius;
+        }
+        if (top < width) {
+          topBarBorderRadiuses.borderTopRightRadius = borderRadius;
+          topBarBorderRadiuses.borderBottomRightRadius = borderRadius;
+        }
+        if (left < height) {
+          leftBarBorderRadiuses.borderTopLeftRadius = borderRadius;
+          leftBarBorderRadiuses.borderTopRightRadius = borderRadius;
+        }
+        break;
+      default:
+        break;
+    }
+  }
+  return {
+    leftBarBorderRadiuses,
+    rightBarBorderRadiuses,
+    bottomBarBorderRadiuses,
+    topBarBorderRadiuses
   }
 }
