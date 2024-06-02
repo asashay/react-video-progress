@@ -39,6 +39,20 @@ class Example extends Component {
       />
   }
 }
+
+// or in the functional component
+const FunctionalComponentExample = () => {
+  return <VideoProgress
+    progressStart="BottomLeft"
+    type="OneLine"
+    pathColor="red"
+    pathWidth="4px"
+    pathBorderRadius="2px"
+    src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
+    height="200px"
+    controls
+  />
+}
 ```
 
 Also it takes in all the `<video>` props and passes them down to the underlying video element.
