@@ -1,5 +1,5 @@
 {
-  "version": "2.0.4",
+  "version": "2.0.5",
   "name": "react-video-progress",
   "author": "Alex Oliynyk",
   "description": "React component to show progress at video frame borders",
