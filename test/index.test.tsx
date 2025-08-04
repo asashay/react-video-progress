@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import { VideoProgress, LINE_TYPE, START } from '../src';
 import { getLengthes, getBarsPositions, getTotalLength, getBorderRadiuses } from '../src/helpers';
 
